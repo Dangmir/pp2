@@ -31,68 +31,69 @@ class Test():
         ty.grid(row=0,column=5)
         tyt.grid(row=1,column=5)
         self.take_a_key()
+    try:
+        def thread(func):
+            def wrapper(*args, **kwargs):
+                current_thread = threading.Thread(
+                    target=func, args=args, kwargs=kwargs)
+                current_thread.start()
 
-    def thread(func):
-        def wrapper(*args, **kwargs):
-            current_thread = threading.Thread(
-                target=func, args=args, kwargs=kwargs)
-            current_thread.start()
+            return wrapper
 
-        return wrapper
-
-    @thread
-    def take_a_key(self):
-        def np():
-            for i in range(60):
-                self.npt.config(text=f"00:{i}")
-                time.sleep(1)
-            subprocess.run("Msg lexa324sa Пора ебашить фуру")
-            self.npt.config(text="00:00")
-        def pg():
-            for i in range(60):
-                self.pgt.config(text=f"00:{i}")
-                time.sleep(1)
-            subprocess.run("Msg lexa324sa Пора ебашить пуджа")
-            self.pgt.config(text="00:00")
-        def es():
-            for i in range(60):
-                self.est.config(text=f"00:{i}")
-                time.sleep(1)
-            subprocess.run("Msg lexa324sa Пора ебашить спирита")
-            self.est.config(text="00:00")
-        def sk():
-            for i in range(60):
-                self.skt.config(text=f"00:{i}")
-                time.sleep(1)
-            subprocess.run("Msg lexa324sa Пора ебашить санд кинга")
-            self.skt.config(text="00:00")
-        def vm():
-            for i in range(60):
-                self.vmt.config(text=f"00:{i}")
-                time.sleep(1)
-            subprocess.run("Msg lexa324sa Пора ебашить веника")
-            self.vmt.config(text="00:00")
-        def ty():
-            for i in range(60):
-                self.tyt.config(text=f"00:{i}")
-                time.sleep(1)
-            subprocess.run("Msg lexa324sa Пора ебашить тиника")
-            self.tyt.config(text="00:00")
-        th1 = Thread(target=np)
-        th2 = Thread(target=pg)
-        th3 = Thread(target=es)
-        th4 = Thread(target=sk)
-        th5 = Thread(target=vm)
-        th6 = Thread(target=ty)
-        keyboard.add_hotkey('Ctrl+1', lambda:th1.start())
-        keyboard.add_hotkey('Ctrl+2', lambda:th2.start())
-        keyboard.add_hotkey('Ctrl+3', lambda:th3.start())
-        keyboard.add_hotkey('Ctrl+4', lambda:th4.start())
-        keyboard.add_hotkey('Ctrl+5', lambda:th5.start())
-        keyboard.add_hotkey('Ctrl+6', lambda:th6.start())
-        keyboard.add_hotkey('Ctrl+F1', lambda:window.destroy())
-        keyboard.wait()
-
+        @thread
+        def take_a_key(self):
+            def np():
+                for i in range(60):
+                    self.npt.config(text=f"00:{i}")
+                    time.sleep(1)
+                subprocess.run("Msg lexa324sa Пора ебашить фуру")
+                self.npt.config(text="00:00")
+            def pg():
+                for i in range(60):
+                    self.pgt.config(text=f"00:{i}")
+                    time.sleep(1)
+                subprocess.run("Msg lexa324sa Пора ебашить пуджа")
+                self.pgt.config(text="00:00")
+            def es():
+                for i in range(60):
+                    self.est.config(text=f"00:{i}")
+                    time.sleep(1)
+                subprocess.run("Msg lexa324sa Пора ебашить спирита")
+                self.est.config(text="00:00")
+            def sk():
+                for i in range(60):
+                    self.skt.config(text=f"00:{i}")
+                    time.sleep(1)
+                subprocess.run("Msg lexa324sa Пора ебашить санд кинга")
+                self.skt.config(text="00:00")
+            def vm():
+                for i in range(60):
+                    self.vmt.config(text=f"00:{i}")
+                    time.sleep(1)
+                subprocess.run("Msg lexa324sa Пора ебашить веника")
+                self.vmt.config(text="00:00")
+            def ty():
+                for i in range(60):
+                    self.tyt.config(text=f"00:{i}")
+                    time.sleep(1)
+                subprocess.run("Msg lexa324sa Пора ебашить тиника")
+                self.tyt.config(text="00:00")
+            th1 = Thread(target=np)
+            th2 = Thread(target=pg)
+            th3 = Thread(target=es)
+            th4 = Thread(target=sk)
+            th5 = Thread(target=vm)
+            th6 = Thread(target=ty)
+            keyboard.add_hotkey('Ctrl+1', lambda:th1.start())
+            keyboard.add_hotkey('Ctrl+2', lambda:th2.start())
+            keyboard.add_hotkey('Ctrl+3', lambda:th3.start())
+            keyboard.add_hotkey('Ctrl+4', lambda:th4.start())
+            keyboard.add_hotkey('Ctrl+5', lambda:th5.start())
+            keyboard.add_hotkey('Ctrl+6', lambda:th6.start())
+            keyboard.add_hotkey('Ctrl+F1', lambda:window.destroy())
+            keyboard.wait()
+    except BaseException as e:
+        print(e)
 window = tk.Tk()
 window.attributes("-topmost",True)
 window.geometry("675x60+1235+0")
